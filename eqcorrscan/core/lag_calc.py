@@ -312,7 +312,8 @@ def xcorr_pick_family(family, stream, shift_len=0.2, min_cc=0.4,
                 method_id=ResourceIdentifier('EQcorrscan'), phase_hint=phase,
                 creation_info='eqcorrscan.core.lag_calc',
                 evaluation_mode='automatic',
-                comments=[Comment(text='cc_max={0}'.format(cc_max))]))
+                #comments=[Comment(text='cc_max={0}'.format(cc_max))]))
+		comments=[Comment(text=['cc_max={0}'.format(cc_max),'shift={0}'.format(shift)])])) ## BNJ 11-23-2021
         event.resource_id = ResourceIdentifier(detection_id)
         event.comments.append(Comment(text="detect_val={0}".format(cccsum)))
         # Add template-name as comment to events
